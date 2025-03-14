@@ -1,0 +1,150 @@
+git log --stat | cat
+commit 1ab892a6106306c4ed7c8040dd1580919946197b
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 15:11:05 2025 +0200
+
+```
+muutoksia
+
+```
+
+tiedostoja/file2             | 0
+tiedostoja/{file1 => file22} | 0
+2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7b977ec015fb7fcca320036ecca641cf9a332452
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 15:08:48 2025 +0200
+
+```
+uusi hakemisto
+
+```
+
+tiedostoja/file1 | 0
+tiedostoja/file2 | 0
+tiedostoja/file3 | 0
+3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2fa0bd86d8ee1b72ce7ce58093a9c301b93c40c0
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 15:03:05 2025 +0200
+
+```
+muutoksia
+
+```
+
+eka.txt    | 8 +-------
+kolmas.txt | 3 ++-
+2 files changed, 3 insertions(+), 8 deletions(-)
+
+commit e42c76acb935f21344c25e4830f1e7097636ce89
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 14:59:03 2025 +0200
+
+```
+uusi nimi tiedostolle
+
+```
+
+tiedosto.txt => eka.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 07ebae8ad3886e51302948fb7ec0a7789d22bca9
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 14:57:50 2025 +0200
+
+```
+poista toinen.txt
+
+```
+
+toinen.txt | 1 -
+1 file changed, 1 deletion(-)
+
+commit 678f8e381a9465a095445a1e966f86c3f2aaa58f
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 14:53:08 2025 +0200
+
+```
+muutoksia
+
+```
+
+tiedosto.txt | 45 ++++++++++++++++++++++++++++++++++++++++++++-
+1 file changed, 44 insertions(+), 1 deletion(-)
+
+commit e74ee8f3baa17aa5889407c2093b49b6d422f27e
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 14:50:08 2025 +0200
+
+```
+lisäyksiä tiedosto.txt
+
+```
+
+tiedosto.txt | 20 ++++++++++++++++++++
+1 file changed, 20 insertions(+)
+
+commit 87d5911edeb69d498d7a0b54c236f1e4c8e11aaf
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 14:29:55 2025 +0200
+
+```
+lisäys
+
+```
+
+stuff/jokin.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 366f74dbeb8d11954477d4cb4c85826a63b6d282
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 14:27:47 2025 +0200
+
+```
+muutoksia
+
+```
+
+kolmas.txt | 1 +
+toinen.txt | 1 +
+2 files changed, 2 insertions(+)
+
+commit 1ec973eb9fc7bfb10622f501f9a3bce002a4b917
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 14:25:46 2025 +0200
+
+```
+kolmas.txt luotu
+
+```
+
+kolmas.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit fb7a8a2699177504bc2305000975cd1bc5a71de3
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 14:23:27 2025 +0200
+
+```
+muutos ja lisäys
+
+```
+
+tiedosto.txt | 1 +
+toinen.txt   | 0
+2 files changed, 1 insertion(+)
+
+commit c5e7ff3406dd51cad7435bc5c022269e0aac7d74
+Author: Nea [neazahorszky@gmail.com](mailto:neazahorszky@gmail.com)
+Date:   Fri Mar 14 14:20:26 2025 +0200
+
+```
+tiedosto.txt luotu
+
+```
+
+tiedosto.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
