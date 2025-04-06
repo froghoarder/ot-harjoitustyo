@@ -1,9 +1,14 @@
 import pygame
 from level import Level
+from gameloop import GameLoop
+from renderer import Renderer
+from event_queue import EventQueue
+from clock import Clock
 
-LEVEL_1_MAP =   [[1,1,1,1],
-                [1,3,0,1],
-                [1,1,1,1]]
+LEVEL_1_MAP =  [[1,1,1,1,1,1],
+                [1,0,0,0,0,1],
+                [1,3,0,0,0,1],
+                [1,1,1,1,1,1]]
 
 CELL_SIZE = 50
 
@@ -20,21 +25,14 @@ def main():
     pygame.display.set_caption("f r o g.")
 
     level = Level(level_map, CELL_SIZE)
+    renderer = Renderer(display, level)
+    event_queue = EventQueue()
+    clock = Clock()
+    game_loop = GameLoop(level, CELL_SIZE, renderer, event_queue, clock)
 
     pygame.init()
-    level.all_sprites.draw(display)
+    game_loop.start()
 
-    running = True
-
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-
-        pygame.display.update()
-
-
-    pygame.quit()
 
 if __name__ == "__main__":
     main()

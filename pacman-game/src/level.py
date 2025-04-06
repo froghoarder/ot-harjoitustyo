@@ -24,6 +24,15 @@ class Level:
 
         self._initialize_sprites(level_map)
 
+    def move_frog(self, dx=0, dy=0):
+        """moves the sprite frog
+
+        Args:
+            dx (int, optional): move horizontally by this . Defaults to 0.
+            dy (int, optional): _description_. Defaults to 0.
+        """
+        self.frog.rect.move_ip(dx, dy)
+
     def _initialize_sprites(self, level_map):
         """initializes the sprites of the level
 
