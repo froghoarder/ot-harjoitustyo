@@ -8,7 +8,7 @@ class Level:
     """class responsible for creating and updating the current level of the game
     """
 
-    def __init__(self, level_map, cell_size):
+    def __init__(self, level_map, cell_size=50):
         """creates a new level
 
         Args:
