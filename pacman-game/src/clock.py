@@ -1,8 +1,10 @@
 import pygame
 
+
 class Clock:
     """internal clock of the game
     """
+
     def __init__(self):
         self._clock = pygame.time.Clock()
 

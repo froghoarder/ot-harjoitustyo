@@ -5,10 +5,10 @@ from renderer import Renderer
 from event_queue import EventQueue
 from clock import Clock
 
-LEVEL_1_MAP =  [[1,1,1,1,1,1],
-                [1,0,0,0,0,1],
-                [1,3,0,0,0,1],
-                [1,1,1,1,1,1]]
+LEVEL_1_MAP = [[1, 1, 1, 1, 1, 1],
+               [1, 0, 0, 0, 0, 1],
+               [1, 3, 0, 0, 0, 1],
+               [1, 1, 1, 1, 1, 1]]
 
 CELL_SIZE = 50
 

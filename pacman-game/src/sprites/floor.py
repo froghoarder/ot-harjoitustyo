@@ -1,7 +1,8 @@
-import pygame
 import os
+import pygame
 
 directoryname = os.path.dirname(__file__)
+
 
 class Floor(pygame.sprite.Sprite):
     """Class that creates and manages the sprite "floor"
