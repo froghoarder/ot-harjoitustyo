@@ -1,6 +1,7 @@
 import pygame
 from sprites.floor import Floor
 from sprites.wall import Wall
+from sprites.collectible import Collectible
 from sprites.frog import Frog
 
 
@@ -17,8 +18,10 @@ class Level:
         """
 
         self.cell_size = cell_size
+        self.points = 0
         self.floors = pygame.sprite.Group()
         self.walls = pygame.sprite.Group()
+        self.collectibles = pygame.sprite.Group()
         self.frog = None
         self.all_sprites = pygame.sprite.Group()
 
@@ -41,12 +44,21 @@ class Level:
                     dy -= 1
                 elif dy < 0:
                     dy += 1
-                print(dx, dy)
                 self.move_frog(dx, dy)
-               
+
             return
 
         self.frog.rect.move_ip(dx, dy)
+
+    def collect_stuff(self):
+        """collect collectibles if the character is near enough and add up points
+
+        """
+        collected = pygame.sprite.spritecollide(
+            self.frog, self.collectibles, True)
+
+        if collected:
+            self.points += 1
 
     def _initialize_sprites(self, level_map):
         """initializes the sprites of the level
@@ -61,12 +73,15 @@ class Level:
             for x in range(width):
                 cell = level_map[y][x]
                 norm_x = x * self.cell_size
-                norm_y = y * self.cell_size
+                norm_y = y * self.cell_size + self.cell_size
 
                 if cell == 0:
                     self.floors.add(Floor(norm_x, norm_y))
                 elif cell == 1:
                     self.walls.add(Wall(norm_x, norm_y))
+                elif cell == 2:
+                    self.floors.add(Floor(norm_x, norm_y))
+                    self.collectibles.add(Collectible(norm_x, norm_y))
                 elif cell == 3:
                     self.floors.add(Floor(norm_x, norm_y))
                     self.frog = Frog(norm_x, norm_y)
@@ -74,6 +89,7 @@ class Level:
         self.all_sprites.add(
             self.floors,
             self.walls,
+            self.collectibles,
             self.frog
         )
 
@@ -95,4 +111,3 @@ class Level:
         self.frog.rect.move_ip(-dx, -dy)
 
         return character_can_move
-        

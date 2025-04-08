@@ -2,6 +2,7 @@ import pygame
 
 MOVEMENT_SPEED = 4
 
+
 class GameLoop:
     """class responsible for creating a new game loop, and for
         reading the user's input, updating the status of the game based on this input
@@ -27,6 +28,7 @@ class GameLoop:
         while self._running:
             self._events()
             self._move_character()
+            self._collect()
             self._render()
             self._clock.tick(60)
 
@@ -66,6 +68,11 @@ class GameLoop:
             self._level.move_frog(dy=-MOVEMENT_SPEED)
         if self._down:
             self._level.move_frog(dy=MOVEMENT_SPEED)
+
+    def _collect(self):
+        """collect collectibles, if applicable
+        """
+        self._level.collect_stuff()
 
     def _render(self):
         self._renderer.render()

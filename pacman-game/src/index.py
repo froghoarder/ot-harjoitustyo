@@ -6,8 +6,9 @@ from event_queue import EventQueue
 from clock import Clock
 
 LEVEL_1_MAP = [[1, 1, 1, 1, 1, 1],
-               [1, 0, 0, 0, 0, 1],
-               [1, 3, 0, 0, 0, 1],
+               [1, 2, 0, 2, 2, 1],
+               [1, 0, 1, 1, 2, 1],
+               [1, 3, 0, 0, 2, 1],
                [1, 1, 1, 1, 1, 1]]
 
 CELL_SIZE = 50
@@ -17,7 +18,7 @@ def main():
     level_map = LEVEL_1_MAP
     height = len(level_map)
     width = len(level_map[0])
-    display_height = height * CELL_SIZE
+    display_height = height * CELL_SIZE + CELL_SIZE
     display_width = width * CELL_SIZE
 
     display = pygame.display.set_mode((display_width, display_height))
