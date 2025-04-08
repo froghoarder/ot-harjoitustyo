@@ -3,9 +3,14 @@
 ### Documentation
 - [specification](pacman-game/documentation/specification.md)
 - [timetracking](pacman-game/documentation/timetracking.md)
+- [architecture](pacman-game/documentation/architecture.md)
 
-### Exercises
-
- ##### <ins> Week 1 </ins>
-- [komentorivi.txt](laskarit/viikko1/komentorivi.txt)  
-- [gitlog.txt](laskarit/viikko1/gitlog.txt)
+### Installation
+1. Install dependencies:
+```
+poetry install
+```
+2. Start the app by using the command:
+```
+poetry run invoke start
+```
