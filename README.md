@@ -1,11 +1,15 @@
-## Ohjelmistotekniikka: harjoitustyö
+# Ohjelmistotekniikka: harjoitustyö
 
-### Documentation
+This app is a Pacman-style game that users can play to gain points.
+
+## Documentation
 - [specification](pacman-game/documentation/specification.md)
 - [timetracking](pacman-game/documentation/timetracking.md)
+- [changelog](pacman-game/documentation/changelog.md)
 - [architecture](pacman-game/documentation/architecture.md)
+- [sources](pacman-game/documentation/sources.md)
 
-### Installation
+## Installation
 1. Install dependencies:
 ```
 poetry install
@@ -13,4 +17,23 @@ poetry install
 2. Start the app by using the command:
 ```
 poetry run invoke start
+```
+
+## Command-line operations
+
+#### Running the app
+```
+poetry run invoke start
+```
+#### Testing
+```
+poetry run invoke test
+```
+#### Test coverage
+```
+poetry run invoke coverage-report
+```
+#### Pylint
+```
+poetry run invoke lint
 ```
