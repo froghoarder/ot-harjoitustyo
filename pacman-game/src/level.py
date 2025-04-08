@@ -28,9 +28,24 @@ class Level:
         """moves the sprite frog
 
         Args:
-            dx (int, optional): move horizontally by this . Defaults to 0.
-            dy (int, optional): _description_. Defaults to 0.
+            dx (int, optional): move horizontally by this amount. Defaults to 0.
+            dy (int, optional): move vertivcally by this amount. Defaults to 0.
         """
+        if not self._character_can_move(dx, dy):
+            if dx != 0 or dy != 0:
+                if dx > 0:
+                    dx -= 1
+                elif dx < 0:
+                    dx += 1
+                elif dy > 0:
+                    dy -= 1
+                elif dy < 0:
+                    dy += 1
+                print(dx, dy)
+                self.move_frog(dx, dy)
+               
+            return
+
         self.frog.rect.move_ip(dx, dy)
 
     def _initialize_sprites(self, level_map):
@@ -61,3 +76,23 @@ class Level:
             self.walls,
             self.frog
         )
+
+    def _character_can_move(self, dx=0, dy=0):
+        """checks whether the character will collide with a wall when moved
+
+        Args:
+            dx (int, optional): move horizontally by this amount. Defaults to 0.
+            dy (int, optional): move vertically by this amount. Defaults to 0.
+
+        Returns:
+            True, if the character can move without colliding with a wall, if not, False
+        """
+        self.frog.rect.move_ip(dx, dy)
+
+        collision = pygame.sprite.spritecollide(self.frog, self.walls, False)
+        character_can_move = not collision
+
+        self.frog.rect.move_ip(-dx, -dy)
+
+        return character_can_move
+        
