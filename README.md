@@ -10,7 +10,7 @@ This app is a Pacman-style game that users can play to gain points.
 - [sources](pacman-game/documentation/sources.md)
 
 ## Installation
-1. Install dependencies:
+1. Install dependencies (with "pacman-game" as your current directory):
 ```
 poetry install
 ```
