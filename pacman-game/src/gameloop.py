@@ -29,6 +29,7 @@ class GameLoop:
             self._events()
             self._move_character()
             self._collect()
+            self._check_level()
             self._render()
             self._clock.tick(60)
 
@@ -37,26 +38,32 @@ class GameLoop:
         """
         for event in self._event_queue.get():
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT:
-                    self._left = True
-                if event.key == pygame.K_RIGHT:
-                    self._right = True
-                if event.key == pygame.K_UP:
-                    self._up = True
-                if event.key == pygame.K_DOWN:
-                    self._down = True
+                self._event_keydown(event)
             if event.type == pygame.KEYUP:
-                if event.key == pygame.K_LEFT:
-                    self._left = False
-                if event.key == pygame.K_RIGHT:
-                    self._right = False
-                if event.key == pygame.K_UP:
-                    self._up = False
-                if event.key == pygame.K_DOWN:
-                    self._down = False
+                self._event_keyup(event)
             elif event.type == pygame.QUIT:
                 self._running = False
 
+    def _event_keydown(self, event):
+        if event.key == pygame.K_LEFT:
+            self._left = True
+        if event.key == pygame.K_RIGHT:
+            self._right = True
+        if event.key == pygame.K_UP:
+            self._up = True
+        if event.key == pygame.K_DOWN:
+            self._down = True
+
+    def _event_keyup(self, event):
+        if event.key == pygame.K_LEFT:
+            self._left = False
+        if event.key == pygame.K_RIGHT:
+            self._right = False
+        if event.key == pygame.K_UP:
+            self._up = False
+        if event.key == pygame.K_DOWN:
+            self._down = False
+        
     def _move_character(self):
         """moves the character
         """
@@ -73,6 +80,16 @@ class GameLoop:
         """collect collectibles, if applicable
         """
         self._level.collect_stuff()
+
+    def _check_level(self):
+        """checks the status of the level(normal, level completed, game over)
+        """
+
+        level_status = self._level.level_status()
+        if level_status == 1:
+            self._renderer.level_cleared()
+        elif level_status == 2:
+            self._renderer.game_over()
 
     def _render(self):
         self._renderer.render()

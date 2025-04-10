@@ -11,11 +11,17 @@ LEVEL_1_MAP = [[1, 1, 1, 1, 1, 1],
                [1, 3, 0, 0, 2, 1],
                [1, 1, 1, 1, 1, 1]]
 
+LEVEL_2_MAP =  [[1,1,1,1,1,1,1,1,1,1,1],
+                [1,0,2,0,1,2,2,0,2,0,1],
+                [1,2,1,1,1,0,1,1,1,2,1],
+                [1,2,0,0,2,0,2,2,2,3,1],
+                [1,1,1,1,1,1,1,1,1,1,1]]
+
 CELL_SIZE = 50
 
 
 def main():
-    level_map = LEVEL_1_MAP
+    level_map = LEVEL_2_MAP
     height = len(level_map)
     width = len(level_map[0])
     display_height = height * CELL_SIZE + CELL_SIZE

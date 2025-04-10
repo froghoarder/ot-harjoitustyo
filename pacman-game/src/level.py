@@ -60,6 +60,20 @@ class Level:
         if collected:
             self.points += 1
 
+    def level_status(self):
+        """_summary_
+
+        Returns:
+            status (int): status of the level; 
+                            0: 'normal', playing the level; 1: level cleared; 2: game over
+        """
+        status = 0
+        if not self.collectibles:
+            status = 1
+        elif ...:   # implement lives of the character
+            ...
+        return status
+
     def _initialize_sprites(self, level_map):
         """initializes the sprites of the level
 
