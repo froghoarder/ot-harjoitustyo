@@ -1,12 +1,14 @@
 import pygame
 
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
 
 class Renderer:
     """class responsible for rendering the display of the game
     """
 
     def __init__(self, display, level):
-        """_summary_
+        """constructor, initiates a new renderer
 
         Args:
             display (pygame.Surface): display of the game
@@ -52,16 +54,16 @@ class Renderer:
         score_width = 100
         score_area = pygame.Rect(
             score_position[0], score_position[1], score_width, score_height)
-        self._display.fill((0, 0, 0), score_area)
+        self._display.fill(BLACK, score_area)
 
         
         text = f"SCORE: {self._level.points}"
-        self._create_text(self._font_size_small, text, (255, 255, 255), score_position)
+        self._create_text(self._font_size_small, text, WHITE, score_position)
 
     def _level_cleared_screen(self):
-        self._display.fill((0,0,0))
+        self._display.fill(BLACK)
         text = "Level cleared!"
-        self._create_text(self._font_size_large, text, (255, 255, 255), centered=True)
+        self._create_text(self._font_size_large, text, WHITE, centered=True)
 
     def _game_over_screen(self):
         ...

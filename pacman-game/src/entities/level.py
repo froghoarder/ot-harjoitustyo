@@ -61,7 +61,7 @@ class Level:
             self.points += 1
 
     def level_status(self):
-        """_summary_
+        """checks the status of the level
 
         Returns:
             status (int): status of the level; 

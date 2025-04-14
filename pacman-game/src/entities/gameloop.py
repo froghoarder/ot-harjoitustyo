@@ -41,27 +41,38 @@ class GameLoop:
                 self._event_keydown(event)
             if event.type == pygame.KEYUP:
                 self._event_keyup(event)
+            #button stuff
             elif event.type == pygame.QUIT:
                 self._running = False
 
     def _event_keydown(self, event):
-        if event.key == pygame.K_LEFT:
+        """handles keys being pressed
+
+        Args:
+            event (pygame.event): event being handled
+        """
+        if event.key == pygame.K_LEFT or event.key == pygame.K_a:
             self._left = True
-        if event.key == pygame.K_RIGHT:
+        if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
             self._right = True
-        if event.key == pygame.K_UP:
+        if event.key == pygame.K_UP or event.key == pygame.K_w:
             self._up = True
-        if event.key == pygame.K_DOWN:
+        if event.key == pygame.K_DOWN or event.key == pygame.K_s:
             self._down = True
 
     def _event_keyup(self, event):
-        if event.key == pygame.K_LEFT:
+        """handles keys being released
+
+        Args:
+            event (pygame.event): event being handled
+        """
+        if event.key == pygame.K_LEFT or event.key == pygame.K_a:
             self._left = False
-        if event.key == pygame.K_RIGHT:
+        if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
             self._right = False
-        if event.key == pygame.K_UP:
+        if event.key == pygame.K_UP or event.key == pygame.K_w:
             self._up = False
-        if event.key == pygame.K_DOWN:
+        if event.key == pygame.K_DOWN or event.key == pygame.K_s:
             self._down = False
         
     def _move_character(self):

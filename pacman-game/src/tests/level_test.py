@@ -1,6 +1,6 @@
 import unittest
 import pygame
-from level import Level
+from entities.level import Level
 
 LEVEL_MAP_TEST = [[1, 1, 1, 1, 1],
                   [1, 0, 0, 2, 1],
