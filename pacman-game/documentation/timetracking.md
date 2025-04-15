@@ -6,4 +6,7 @@
 | 6.4.  | 2         | expanding code, implementing character movement |
 | 7.4.  | 5         | testing, improving code quality, looking into pixel art |
 | 8.4.  | 5         | improving character movement, adding collectibles and score |
-| sum   | 17        |
+| 10.4. | 2         | implementing level completion |
+| 14.4. | 4	    | trying out external libraries, improving structure |
+| 15.4. | 1	    | improving code, updating documentation |
+| sum   | 24        |

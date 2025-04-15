@@ -12,7 +12,7 @@ This app is a Pacman-style game that users can play to gain points and clear lev
   - The character has three lives
   - They can collect dots to gain points   [done]
   - There are enemies in the maze that try to catch the character, if they succeed, the character loses one life
-  - A level is cleared if a user manages to collect all dots
+  - A level is cleared if a user manages to collect all dots	[done]
   - The game is over if they lose all lives
  - Users can log out
 

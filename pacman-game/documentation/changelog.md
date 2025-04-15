@@ -11,3 +11,7 @@
 - The user can see their score
 - The character now moves smoothly instead of one tile at a time
 - Tested that the score increases correctly
+
+## Week 5
+
+- A level is completed if the user has collected all collectibles
