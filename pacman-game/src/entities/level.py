@@ -70,8 +70,7 @@ class Level:
         status = 0
         if not self.collectibles:
             status = 1
-        elif ...:   # implement lives of the character
-            ...
+        #elif ...:    implement lives of the character
         return status
 
     def _initialize_sprites(self, level_map):

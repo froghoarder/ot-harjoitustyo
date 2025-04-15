@@ -51,13 +51,13 @@ class GameLoop:
         Args:
             event (pygame.event): event being handled
         """
-        if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+        if event.key in (pygame.K_LEFT, pygame.K_a):
             self._left = True
-        if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+        if event.key in (pygame.K_RIGHT, pygame.K_d):
             self._right = True
-        if event.key == pygame.K_UP or event.key == pygame.K_w:
+        if event.key in (pygame.K_UP, pygame.K_w):
             self._up = True
-        if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+        if event.key in (pygame.K_DOWN, pygame.K_s):
             self._down = True
 
     def _event_keyup(self, event):
@@ -66,15 +66,15 @@ class GameLoop:
         Args:
             event (pygame.event): event being handled
         """
-        if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+        if event.key in (pygame.K_LEFT, pygame.K_a):
             self._left = False
-        if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+        if event.key in (pygame.K_RIGHT, pygame.K_d):
             self._right = False
-        if event.key == pygame.K_UP or event.key == pygame.K_w:
+        if event.key in (pygame.K_UP, pygame.K_w):
             self._up = False
-        if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+        if event.key in (pygame.K_DOWN, pygame.K_s):
             self._down = False
-        
+
     def _move_character(self):
         """moves the character
         """
