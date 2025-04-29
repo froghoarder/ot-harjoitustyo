@@ -9,6 +9,10 @@ This app is a Pacman-style game that users can play to gain points.
 - [architecture](pacman-game/documentation/architecture.md)
 - [sources](pacman-game/documentation/sources.md)
 
+## Releases
+- [Week 6](https://github.com/froghoarder/ot-harjoitustyo/releases/tag/week6)  
+- [Week 5](https://github.com/froghoarder/ot-harjoitustyo/releases/tag/week5)
+
 ## Installation
 1. Install dependencies (with "pacman-game" as your current directory):
 ```
