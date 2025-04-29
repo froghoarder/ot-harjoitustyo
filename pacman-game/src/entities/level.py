@@ -133,10 +133,9 @@ class Level:
         dx, dy = enemy.get_direction()
         if not self._character_can_move(enemy, dx, dy):
             enemy.next_direction()
-            self._move_enemy
+            self._move_enemy(enemy)
             return
         enemy.rect.move_ip(dx, dy)
-
 
     def _character_can_move(self, character, dx=0, dy=0):
         """checks whether the character will collide with a wall when moved

@@ -43,7 +43,7 @@ class GameLoop:
                 self._event_keydown(event)
             if event.type == pygame.KEYUP:
                 self._event_keyup(event)
-            #button stuff
+            # button stuff
             elif event.type == pygame.QUIT:
                 self._running = False
 

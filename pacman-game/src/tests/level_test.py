@@ -33,4 +33,3 @@ class TestLevel(unittest.TestCase):
         self.level.move_frog(dx=CELL_SIZE)
         self.level.collect_stuff()
         self.assertEqual(self.level.points, 1)
-

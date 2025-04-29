@@ -19,13 +19,14 @@ class Enemy(pygame.sprite.Sprite):
         """
         super().__init__()
 
-        self.previous_move_time = 0
-        self.movement_options = [(1,0), (-1,0), (0,1), (0,-1)]
-        self.movement_index = 0
-
         self.image = pygame.image.load(
             os.path.join(directoryname, "..", "pngs", IMAGE_NAME)
         )
+
+        self.previous_move_time = 0
+        self.movement_options = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        self.movement_index = 0
+
         self.image = pygame.transform.scale(self.image, (50, 50))
         self.rect = self.image.get_rect()
 
@@ -49,6 +50,4 @@ class Enemy(pygame.sprite.Sprite):
         return self.movement_options[self.movement_index]
 
     def next_direction(self):
-        self.movement_index = random.randint(0,3)
-
-
+        self.movement_index = random.randint(0, 3)

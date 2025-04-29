@@ -3,6 +3,7 @@ import pygame
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
+
 class Renderer:
     """class responsible for rendering the display of the game
     """
@@ -40,7 +41,7 @@ class Renderer:
         self.__game_over = True
 
     def _create_text(self, font_size, text, color, position=None, centered=False):
-        
+
         font = pygame.font.SysFont(self._font, font_size)
         text_surface = font.render(text, False, color)
         if centered:
@@ -56,7 +57,6 @@ class Renderer:
             score_position[0], score_position[1], score_width, score_height)
         self._display.fill(BLACK, score_area)
 
-        
         text = f"SCORE: {self._level.points}"
         self._create_text(self._font_size_small, text, WHITE, score_position)
 
@@ -69,4 +69,3 @@ class Renderer:
         self._display.fill(BLACK)
         text = "Game over!"
         self._create_text(self._font_size_large, text, WHITE, centered=True)
-
