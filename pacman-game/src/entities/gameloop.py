@@ -29,6 +29,8 @@ class GameLoop:
             self._events()
             self._move_character()
             self._collect()
+            current_time = self._clock.get_ticks()
+            self._level.update_enemies(current_time)
             self._check_level()
             self._render()
             self._clock.tick(60)

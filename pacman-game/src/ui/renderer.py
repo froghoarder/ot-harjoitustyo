@@ -66,5 +66,7 @@ class Renderer:
         self._create_text(self._font_size_large, text, WHITE, centered=True)
 
     def _game_over_screen(self):
-        ...
+        self._display.fill(BLACK)
+        text = "Game over!"
+        self._create_text(self._font_size_large, text, WHITE, centered=True)
 

@@ -3,6 +3,7 @@ from sprites.floor import Floor
 from sprites.wall import Wall
 from sprites.collectible import Collectible
 from sprites.frog import Frog
+from sprites.enemy import Enemy
 
 
 class Level:
@@ -23,6 +24,7 @@ class Level:
         self.walls = pygame.sprite.Group()
         self.collectibles = pygame.sprite.Group()
         self.frog = None
+        self.enemies = pygame.sprite.Group()
         self.all_sprites = pygame.sprite.Group()
 
         self._initialize_sprites(level_map)
@@ -34,7 +36,7 @@ class Level:
             dx (int, optional): move horizontally by this amount. Defaults to 0.
             dy (int, optional): move vertivcally by this amount. Defaults to 0.
         """
-        if not self._character_can_move(dx, dy):
+        if not self._character_can_move(self.frog, dx, dy):
             if dx != 0 or dy != 0:
                 if dx > 0:
                     dx -= 1
@@ -70,8 +72,20 @@ class Level:
         status = 0
         if not self.collectibles:
             status = 1
-        #elif ...:    implement lives of the character
+        elif pygame.sprite.spritecollide(self.frog, self.enemies, False):
+            status = 2
         return status
+
+    def update_enemies(self, current_time):
+        """updates enemy positions
+
+        Args:
+            current_time (int): time that has passed since starting the game
+        """
+        for enemy in self.enemies:
+            if enemy.should_move(current_time):
+                self._move_enemy(enemy)
+                enemy.previous_move_time = current_time
 
     def _initialize_sprites(self, level_map):
         """initializes the sprites of the level
@@ -98,15 +112,33 @@ class Level:
                 elif cell == 3:
                     self.floors.add(Floor(norm_x, norm_y))
                     self.frog = Frog(norm_x, norm_y)
+                elif cell == 4:
+                    self.floors.add(Floor(norm_x, norm_y))
+                    self.enemies.add(Enemy(norm_x, norm_y))
 
         self.all_sprites.add(
             self.floors,
             self.walls,
             self.collectibles,
-            self.frog
+            self.frog,
+            self.enemies
         )
 
-    def _character_can_move(self, dx=0, dy=0):
+    def _move_enemy(self, enemy):
+        """moves an enemy
+
+        Args:
+            enemy (Enemy): enemy to be moved
+        """
+        dx, dy = enemy.get_direction()
+        if not self._character_can_move(enemy, dx, dy):
+            enemy.next_direction()
+            self._move_enemy
+            return
+        enemy.rect.move_ip(dx, dy)
+
+
+    def _character_can_move(self, character, dx=0, dy=0):
         """checks whether the character will collide with a wall when moved
 
         Args:
@@ -116,11 +148,11 @@ class Level:
         Returns:
             True, if the character can move without colliding with a wall, if not, False
         """
-        self.frog.rect.move_ip(dx, dy)
+        character.rect.move_ip(dx, dy)
 
-        collision = pygame.sprite.spritecollide(self.frog, self.walls, False)
+        collision = pygame.sprite.spritecollide(character, self.walls, False)
         character_can_move = not collision
 
-        self.frog.rect.move_ip(-dx, -dy)
+        character.rect.move_ip(-dx, -dy)
 
         return character_can_move
