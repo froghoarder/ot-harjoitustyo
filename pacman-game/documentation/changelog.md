@@ -15,3 +15,8 @@
 ## Week 5
 
 - A level is completed if the user has collected all collectibles
+
+## Week 6
+
+- An enemy moves around in the level
+- If the enemy and the playable character collide, the game is over

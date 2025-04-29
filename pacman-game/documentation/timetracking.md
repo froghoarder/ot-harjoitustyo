@@ -9,4 +9,5 @@
 | 10.4. | 2         | implementing level completion |
 | 14.4. | 4	    | trying out external libraries, improving structure |
 | 15.4. | 1	    | improving code, updating documentation |
-| sum   | 24        |
+| 29.4. | 3 	    | adding enemies, updating documentation |
+| sum   | 27        |
