@@ -17,5 +17,9 @@ Then you can start the application with the command:
 poetry run invoke start
 ```
 
+## Playing the game
 
+When the game starts it will look something like this:  
+![](./pictures/game_view.png)
+You can move the playable character by using either the arrow keys or WASD-keys. The goal of the game is to collect all flowers while managing to not get caught by the dog.
 
