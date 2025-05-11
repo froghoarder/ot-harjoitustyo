@@ -10,4 +10,5 @@
 | 14.4. | 4	    | trying out external libraries, improving structure |
 | 15.4. | 1	    | improving code, updating documentation |
 | 29.4. | 3 	    | adding enemies, updating documentation |
-| sum   | 27        |
+| 11.5. | 3         | updating documentation |
+| sum   | 30        |
