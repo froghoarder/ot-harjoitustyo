@@ -3,6 +3,7 @@
 This app is a Pacman-style game that users can play to gain points.
 
 ## Documentation
+- [user guide](pacman-game/documentation/user_guide.md)
 - [specification](pacman-game/documentation/specification.md)
 - [timetracking](pacman-game/documentation/timetracking.md)
 - [changelog](pacman-game/documentation/changelog.md)
@@ -10,6 +11,7 @@ This app is a Pacman-style game that users can play to gain points.
 - [sources](pacman-game/documentation/sources.md)
 
 ## Releases
+- [Latest release](https://github.com/froghoarder/ot-harjoitustyo/releases/tag/loppupalautus)
 - [Week 6](https://github.com/froghoarder/ot-harjoitustyo/releases/tag/week6)  
 - [Week 5](https://github.com/froghoarder/ot-harjoitustyo/releases/tag/week5)
 
