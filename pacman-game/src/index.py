@@ -29,7 +29,7 @@ def main():
 
     display = pygame.display.set_mode((display_width, display_height))
 
-    pygame.display.set_caption("f r o g.")
+    pygame.display.set_caption("frog game")
 
     level = Level(level_map, CELL_SIZE)
     renderer = Renderer(display, level)
